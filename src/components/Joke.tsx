@@ -14,7 +14,7 @@ const JokeContainer = styled.section`
 const Joke = () => {
   return (
     <JokeContainer id={'joke'}>
-      <h1>바보</h1>
+      <h1>오똥꾸 바보 &#128518;</h1>
     </JokeContainer>
   );
 };
