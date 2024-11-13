@@ -68,6 +68,7 @@ const Header = () => {
         <MenuItem onClick={() => handleScroll('skills')}>Skills</MenuItem>
         <MenuItem onClick={() => handleScroll('projects')}>Projects</MenuItem>
         <MenuItem onClick={() => handleScroll('career')}>Career</MenuItem>
+        <MenuItem onClick={() => handleScroll('joke')}>hahaha</MenuItem>
       </Menu>
     </HeaderContainer>
   );
