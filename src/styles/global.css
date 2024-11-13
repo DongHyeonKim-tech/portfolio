@@ -1,0 +1,20 @@
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 부모 컨테이너 */
+main {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+/* 각 섹션 */
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
