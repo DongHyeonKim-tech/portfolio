@@ -17,10 +17,17 @@ const HeaderContainer = styled.header`
 `;
 
 const Logo = styled.span`
-  fons-size: 1.8rem;
   color: #fff;
   font-weight: bold;
   text-decoration: none;
+
+  @media (min-width: 350px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Menu = styled.nav`
@@ -37,6 +44,14 @@ const MenuItem = styled.a<{ active: boolean }>`
 
   &:hover {
     color: #ff8c00;
+  }
+
+  @media (min-width: 350px) {
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1.2rem;
   }
 `;
 
