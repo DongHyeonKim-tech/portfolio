@@ -7,6 +7,7 @@ import Skills from '@/components/Skills';
 import Header from '@/layout/Header';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 
 const MainContainer = styled.main`
@@ -22,6 +23,7 @@ const Section = styled.section`
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('about');
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
@@ -56,8 +58,8 @@ export default function Home() {
 
       <MainContainer>
         <About />
-        <Skills />
-        <Projects />
+        <Skills isDesktop={isDesktop} />
+        <Projects isDesktop={isDesktop} />
         <Career />
         <Joke />
       </MainContainer>

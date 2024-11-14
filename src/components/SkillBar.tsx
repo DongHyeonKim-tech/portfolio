@@ -16,19 +16,33 @@ const Label = styled.div`
   font-weight: 500;
   color: #ff8c00;
   margin-bottom: 5px;
+  @media (min-width: 350px) {
+    font-size: 0.75rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 1rem;
+  }
 `;
 
 const ProgressBar = styled.div`
-  height: 10px;
   backgroun: #333;
   border-radius: 5px;
   overflow: hidden;
+  @media (min-width: 350px) {
+    height: 5px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 10px;
+  }
 `;
 
 const Filler = styled.div<{ width: number }>`
   height: 100%;
-  width: ${(props) => props.width};
+  width: ${(props) => props.width}%;
   background: #ff8c00;
+  border-radius: 10px;
   transition: width 0.6s ease-in-out;
 `;
 
