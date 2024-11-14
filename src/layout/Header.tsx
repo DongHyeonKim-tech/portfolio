@@ -25,38 +25,33 @@ const Logo = styled.span`
 
 const Menu = styled.nav`
   display: flex;
-  gap: 30px;
-  a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    position: relative;
-    padding: 5px 0;
+  gap: 20px;
+`;
 
-    &:hover::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: -2px;
-      left: 0;
-      background-color: #ff8c00;
-    }
+const MenuItem = styled.a<{ active: boolean }>`
+  color: ${(props) => (props.active ? '#ff8c00' : '#fff')};
+  text-decoration: none;
+  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+  cursor: pointer;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #ff8c00;
   }
 `;
 
-const MenuItem = styled.a`
-  cursor: pointer;
-`;
+interface HeaderProps {
+  activeSection: string;
+}
 
-const Header = () => {
+const Header = ({ activeSection }: HeaderProps) => {
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   };
+  console.log('activeSection: ', activeSection);
 
   return (
     <HeaderContainer>
@@ -64,11 +59,36 @@ const Header = () => {
         <Logo>오두우웅</Logo>
       </Link>
       <Menu>
-        <MenuItem onClick={() => handleScroll('about')}>About</MenuItem>
-        <MenuItem onClick={() => handleScroll('skills')}>Skills</MenuItem>
-        <MenuItem onClick={() => handleScroll('projects')}>Projects</MenuItem>
-        <MenuItem onClick={() => handleScroll('career')}>Career</MenuItem>
-        <MenuItem onClick={() => handleScroll('joke')}>hahaha</MenuItem>
+        <MenuItem
+          active={activeSection === 'about'}
+          onClick={() => handleScroll('about')}
+        >
+          Menu1
+        </MenuItem>
+        <MenuItem
+          active={activeSection === 'skills'}
+          onClick={() => handleScroll('skills')}
+        >
+          Menu2
+        </MenuItem>
+        <MenuItem
+          active={activeSection === 'projects'}
+          onClick={() => handleScroll('projects')}
+        >
+          Menu3
+        </MenuItem>
+        <MenuItem
+          active={activeSection === 'career'}
+          onClick={() => handleScroll('career')}
+        >
+          Menu4
+        </MenuItem>
+        <MenuItem
+          active={activeSection === 'joke'}
+          onClick={() => handleScroll('joke')}
+        >
+          Menu5
+        </MenuItem>
       </Menu>
     </HeaderContainer>
   );

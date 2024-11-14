@@ -6,6 +6,7 @@ import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Header from '@/layout/Header';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const MainContainer = styled.main`
@@ -20,14 +21,38 @@ const Section = styled.section`
 `;
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState<string>('about');
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.6 } // 섹션이 60% 이상 보이면 활성화
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <>
       <Head>
         <title>My Portfolio</title>
         <meta name="description" content="Full Stack Developer Portfolio" />
+        <meta
+          name={'viewport'}
+          content={'width=device-width, initial-scale=1'}
+        />
       </Head>
 
-      <Header />
+      <Header activeSection={activeSection} />
 
       <MainContainer>
         <About />
