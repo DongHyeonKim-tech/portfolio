@@ -26,7 +26,7 @@ const Logo = styled.span`
   }
 
   @media (min-width: 1200px) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 `;
 
@@ -71,7 +71,7 @@ const Header = ({ activeSection }: HeaderProps) => {
   return (
     <HeaderContainer>
       <Link href="/">
-        <Logo>오두우웅</Logo>
+        <Logo>Title</Logo>
       </Link>
       <Menu>
         <MenuItem
