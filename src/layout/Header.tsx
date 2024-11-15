@@ -35,10 +35,10 @@ const Menu = styled.nav`
   gap: 20px;
 `;
 
-const MenuItem = styled.a<{ active: boolean }>`
-  color: ${(props) => (props.active ? '#ff8c00' : '#fff')};
+const MenuItem = styled.a<{ $active: boolean }>`
+  color: ${(props) => (props.$active ? '#ff8c00' : '#fff')};
   text-decoration: none;
-  font-weight: ${(props) => (props.active ? 'bold' : 'normal')};
+  font-weight: ${(props) => (props.$active ? 'bold' : 'normal')};
   cursor: pointer;
   transition: color 0.3s;
 
@@ -75,31 +75,31 @@ const Header = ({ activeSection }: HeaderProps) => {
       </Link>
       <Menu>
         <MenuItem
-          active={activeSection === 'about'}
+          $active={activeSection === 'about'}
           onClick={() => handleScroll('about')}
         >
           Menu1
         </MenuItem>
         <MenuItem
-          active={activeSection === 'skills'}
+          $active={activeSection === 'skills'}
           onClick={() => handleScroll('skills')}
         >
           Menu2
         </MenuItem>
         <MenuItem
-          active={activeSection === 'projects'}
+          $active={activeSection === 'projects'}
           onClick={() => handleScroll('projects')}
         >
           Menu3
         </MenuItem>
         <MenuItem
-          active={activeSection === 'career'}
+          $active={activeSection === 'career'}
           onClick={() => handleScroll('career')}
         >
           Menu4
         </MenuItem>
         <MenuItem
-          active={activeSection === 'joke'}
+          $active={activeSection === 'joke'}
           onClick={() => handleScroll('joke')}
         >
           Menu5
