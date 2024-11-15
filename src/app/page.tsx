@@ -23,7 +23,8 @@ const Section = styled.section`
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('about');
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const [isDesktop, setIsDesktop] = useState<boolean>(true);
+  const desktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
@@ -43,6 +44,11 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    setIsDesktop(desktop);
+  }, [desktop]);
+
   return (
     <>
       <Head>
