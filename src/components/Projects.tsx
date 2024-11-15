@@ -44,10 +44,6 @@ const BottomContainer = styled.div`
   div.slick-slider {
     width: 100%;
   }
-  .silck-slide {
-    padding: 20px;
-    margin: 20px;
-  }
 `;
 
 const Title = styled.h2`
@@ -72,6 +68,10 @@ const ProjectGrid = styled.div`
     gap: 24px;
     flex-wrap: wrap;
   }
+
+  div.slick-slider {
+    padding: 20px;
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -80,6 +80,8 @@ const ProjectCard = styled.div`
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s, box-shadow 0.3x;
+  width: auto !important;
+  text-align: center;
 
   &:hover {
     transform: translateY(-10px);
@@ -90,6 +92,7 @@ const ProjectCard = styled.div`
 const ProjectContent = styled.div`
   padding: 20px;
   gap: 10px;
+  text-align: justify;
 `;
 
 const ProjectTitle = styled.h3`
@@ -139,6 +142,7 @@ const Button = styled.a`
 `;
 
 const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
+  console.log('isDesktop: ', isDesktop);
   const settings = {
     dots: false,
     infinite: true,
@@ -146,9 +150,11 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     slidesToShow: isDesktop ? 3 : 1,
     slidesToScroll: 1,
     centerPadding: '120px',
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
+
+  const cards = [0, 1, 2, 3, 4, 5];
   return (
     <ProjectsContainer
       id={'projects'}
@@ -163,141 +169,39 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       <BottomContainer>
         <ProjectGrid>
           <Slider {...settings}>
-            <ProjectCard>
-              <Image
-                src={City}
-                alt={'city'}
-                style={{
-                  width: '100%',
-                  height: '180px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <ProjectContent>
-                <ProjectTitle>E-commerce Platform</ProjectTitle>
-                <ProjectDescription>A full-stack bulalal</ProjectDescription>
-                <TechStack>
-                  <TechBadge>React</TechBadge>
-                  <TechBadge>Next.js</TechBadge>
-                  <TechBadge>TypeScript</TechBadge>
-                </TechStack>
-                <ButtonContainer>
-                  <Button href="https://github.com/DongHyeonKim-tech/pf">
-                    Live Demo
-                  </Button>
-                  <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                </ButtonContainer>
-              </ProjectContent>
-            </ProjectCard>
-            <ProjectCard>
-              <Image
-                src={City}
-                alt={'city'}
-                style={{
-                  width: '100%',
-                  height: '180px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <ProjectContent>
-                <ProjectTitle>E-commerce Platform</ProjectTitle>
-                <ProjectDescription>A full-stack bulalal</ProjectDescription>
-                <TechStack>
-                  <TechBadge>React</TechBadge>
-                  <TechBadge>Next.js</TechBadge>
-                  <TechBadge>TypeScript</TechBadge>
-                </TechStack>
-                <ButtonContainer>
-                  <Button href="https://github.com/DongHyeonKim-tech/pf">
-                    Live Demo
-                  </Button>
-                  <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                </ButtonContainer>
-              </ProjectContent>
-            </ProjectCard>
-            <ProjectCard>
-              <Image
-                src={City}
-                alt={'city'}
-                style={{
-                  width: '100%',
-                  height: '180px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <ProjectContent>
-                <ProjectTitle>E-commerce Platform</ProjectTitle>
-                <ProjectDescription>A full-stack bulalal</ProjectDescription>
-                <TechStack>
-                  <TechBadge>React</TechBadge>
-                  <TechBadge>Next.js</TechBadge>
-                  <TechBadge>TypeScript</TechBadge>
-                </TechStack>
-                <ButtonContainer>
-                  <Button href="https://github.com/DongHyeonKim-tech/pf">
-                    Live Demo
-                  </Button>
-                  <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                </ButtonContainer>
-              </ProjectContent>
-            </ProjectCard>
-            <ProjectCard>
-              <Image
-                src={City}
-                alt={'city'}
-                style={{
-                  width: '100%',
-                  height: '180px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <ProjectContent>
-                <ProjectTitle>E-commerce Platform</ProjectTitle>
-                <ProjectDescription>A full-stack bulalal</ProjectDescription>
-                <TechStack>
-                  <TechBadge>React</TechBadge>
-                  <TechBadge>Next.js</TechBadge>
-                  <TechBadge>TypeScript</TechBadge>
-                </TechStack>
-                <ButtonContainer>
-                  <Button href="https://github.com/DongHyeonKim-tech/pf">
-                    Live Demo
-                  </Button>
-                  <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                </ButtonContainer>
-              </ProjectContent>
-            </ProjectCard>
-            <ProjectCard>
-              <Image
-                src={City}
-                alt={'city'}
-                style={{
-                  width: '100%',
-                  height: '180px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-              <ProjectContent>
-                <ProjectTitle>E-commerce Platform</ProjectTitle>
-                <ProjectDescription>A full-stack bulalal</ProjectDescription>
-                <TechStack>
-                  <TechBadge>React</TechBadge>
-                  <TechBadge>Next.js</TechBadge>
-                  <TechBadge>TypeScript</TechBadge>
-                </TechStack>
-                <ButtonContainer>
-                  <Button href="https://github.com/DongHyeonKim-tech/pf">
-                    Live Demo
-                  </Button>
-                  <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                </ButtonContainer>
-              </ProjectContent>
-            </ProjectCard>
+            {cards.map((item: number) => {
+              return (
+                <ProjectCard key={item}>
+                  <Image
+                    src={City}
+                    alt={'city'}
+                    style={{
+                      width: '100%',
+                      height: '180px',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}
+                  />
+                  <ProjectContent>
+                    <ProjectTitle>{`Platform ${item}`}</ProjectTitle>
+                    <ProjectDescription>
+                      A full-stack bulalal
+                    </ProjectDescription>
+                    <TechStack>
+                      <TechBadge>React</TechBadge>
+                      <TechBadge>Next.js</TechBadge>
+                      <TechBadge>TypeScript</TechBadge>
+                    </TechStack>
+                    <ButtonContainer>
+                      <Button href="https://github.com/DongHyeonKim-tech/pf">
+                        Live Demo
+                      </Button>
+                      <Button href="https://ggomi.vercel.app/">GitHub</Button>
+                    </ButtonContainer>
+                  </ProjectContent>
+                </ProjectCard>
+              );
+            })}
           </Slider>
         </ProjectGrid>
       </BottomContainer>
