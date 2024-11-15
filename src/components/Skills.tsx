@@ -76,6 +76,7 @@ const SkillCard = styled.div`
   border-radius: 10px;
   padding: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: left;
   width: 70%;
   @media (min-width: 350px) {
     padding: 20px;
@@ -103,6 +104,7 @@ const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    centerMode: true,
   };
   return (
     <SkillContainer id={'skills'}>
