@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Kaizen Dev Hearth',
+  title: 'Kaizen Dev Historia',
   description: "DongHyeon Kim's portfoilo",
 };
 
