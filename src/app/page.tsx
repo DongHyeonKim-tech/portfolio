@@ -1,7 +1,6 @@
 'use client';
 import About from '@/components/About';
 import Career from '@/components/Career';
-import Joke from '@/components/Joke';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Header from '@/layout/Header';
@@ -67,7 +66,6 @@ export default function Home() {
         <Skills isDesktop={isDesktop} />
         <Projects isDesktop={isDesktop} />
         <Career />
-        <Joke />
       </MainContainer>
     </>
   );
