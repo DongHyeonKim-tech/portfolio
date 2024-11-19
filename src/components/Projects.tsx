@@ -51,8 +51,8 @@ const Title = styled.h2`
   color: #ff8c00;
   margin-bottom: 30px;
 
-  @media (min-width: 768px) {
-    font-size: 2.5rem;
+  @media (min-width: 350px) {
+    font-size: 2rem;
     margin-bottom: 24px;
   }
 `;
@@ -152,6 +152,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     centerPadding: '120px',
     autoplay: true,
     autoplaySpeed: 2000,
+    arrows: false,
   };
 
   const cards = [0, 1, 2, 3, 4, 5];
