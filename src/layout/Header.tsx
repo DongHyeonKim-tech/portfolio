@@ -50,6 +50,10 @@ const MenuItem = styled.a<{ $active: boolean }>`
     font-size: 0.75rem;
   }
 
+  @media (min-width: 250px) {
+    font-size: 0.6rem;
+  }
+
   @media (min-width: 1200px) {
     font-size: 1.2rem;
   }
