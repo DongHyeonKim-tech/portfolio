@@ -88,6 +88,15 @@ const Career = () => {
             <li>Full Stack Web Development - </li>
           </Responsibilities>
         </CareerCard>
+        <CareerCard>
+          <JobTitle>Middle Full Stack Developer</JobTitle>
+          <Company>Euclidsoft</Company>
+          <Duration>2021 - 2023</Duration>
+          <Responsibilities>
+            <li>Full Stack Web Development - KISTEP</li>
+            <li>Full Stack Web Development - </li>
+          </Responsibilities>
+        </CareerCard>
       </CareerTimeline>
     </CareerContainer>
   );
