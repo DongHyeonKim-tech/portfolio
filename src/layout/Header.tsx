@@ -102,12 +102,6 @@ const Header = ({ activeSection }: HeaderProps) => {
         >
           Menu4
         </MenuItem>
-        <MenuItem
-          $active={activeSection === 'joke'}
-          onClick={() => handleScroll('joke')}
-        >
-          Menu5
-        </MenuItem>
       </Menu>
     </HeaderContainer>
   );
