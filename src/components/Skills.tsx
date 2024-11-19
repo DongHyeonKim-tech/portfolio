@@ -105,7 +105,7 @@ const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    arrows: false,
+    arrows: isDesktop,
   };
   return (
     <SkillContainer id={'skills'}>
