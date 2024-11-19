@@ -1,6 +1,8 @@
 import City from '@/../public/images/city.jpg';
+import { ArrowLeft, ArrowRight } from '@/utils/commonUtils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
@@ -143,6 +145,7 @@ const Button = styled.a`
 
 const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
   console.log('isDesktop: ', isDesktop);
+  const slideRef = useRef<any>();
   const settings = {
     dots: false,
     infinite: true,
@@ -153,6 +156,20 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
+    prevArrow: (
+      <ArrowLeft
+        onClick={() => {
+          slideRef.current?.slickPrev();
+        }}
+      />
+    ),
+    nextArrow: (
+      <ArrowRight
+        onClick={() => {
+          slideRef.current?.slickNext();
+        }}
+      />
+    ),
   };
 
   const cards = [0, 1, 2, 3, 4, 5];
