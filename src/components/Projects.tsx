@@ -144,7 +144,6 @@ const Button = styled.a`
 `;
 
 const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
-  console.log('isDesktop: ', isDesktop);
   const slideRef = useRef<any>();
   const settings = {
     dots: false,
@@ -156,26 +155,15 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
-    prevArrow: (
-      <ArrowLeft
-        onClick={() => {
-          slideRef.current?.slickPrev();
-        }}
-      />
-    ),
-    nextArrow: (
-      <ArrowRight
-        onClick={() => {
-          slideRef.current?.slickNext();
-        }}
-      />
-    ),
+    prevArrow: <ArrowLeft onClick={() => slideRef.current?.slickPrev()} />,
+    nextArrow: <ArrowRight onClick={() => slideRef.current?.slickNext()} />,
   };
 
-  const cards = [0, 1, 2, 3, 4, 5];
+  const cards = Array.from({ length: 6 }, (_, index) => index);
+
   return (
     <ProjectsContainer
-      id={'projects'}
+      id="projects"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -187,39 +175,35 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       <BottomContainer>
         <ProjectGrid>
           <Slider {...settings}>
-            {cards.map((item: number) => {
-              return (
-                <ProjectCard key={item}>
-                  <Image
-                    src={City}
-                    alt={'city'}
-                    style={{
-                      width: '100%',
-                      height: '180px',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
-                  />
-                  <ProjectContent>
-                    <ProjectTitle>{`Platform ${item}`}</ProjectTitle>
-                    <ProjectDescription>
-                      A full-stack bulalal
-                    </ProjectDescription>
-                    <TechStack>
-                      <TechBadge>React</TechBadge>
-                      <TechBadge>Next.js</TechBadge>
-                      <TechBadge>TypeScript</TechBadge>
-                    </TechStack>
-                    <ButtonContainer>
-                      <Button href="https://github.com/DongHyeonKim-tech/pf">
-                        Live Demo
-                      </Button>
-                      <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                    </ButtonContainer>
-                  </ProjectContent>
-                </ProjectCard>
-              );
-            })}
+            {cards.map((item) => (
+              <ProjectCard key={item}>
+                <Image
+                  src={City}
+                  alt="city"
+                  style={{
+                    width: '100%',
+                    height: '180px',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                />
+                <ProjectContent>
+                  <ProjectTitle>{`Platform ${item}`}</ProjectTitle>
+                  <ProjectDescription>A full-stack bulalal</ProjectDescription>
+                  <TechStack>
+                    {['React', 'Next.js', 'TypeScript'].map((tech) => (
+                      <TechBadge key={tech}>{tech}</TechBadge>
+                    ))}
+                  </TechStack>
+                  <ButtonContainer>
+                    <Button href="https://github.com/DongHyeonKim-tech/pf">
+                      Live Demo
+                    </Button>
+                    <Button href="https://ggomi.vercel.app/">GitHub</Button>
+                  </ButtonContainer>
+                </ProjectContent>
+              </ProjectCard>
+            ))}
           </Slider>
         </ProjectGrid>
       </BottomContainer>

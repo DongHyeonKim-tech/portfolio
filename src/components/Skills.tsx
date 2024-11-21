@@ -96,6 +96,38 @@ const SkillTitle = styled.h3`
   }
 `;
 
+const skillData = [
+  {
+    title: 'Frontend Development',
+    skills: [
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 80 },
+      { skill: 'React', level: 70 },
+      { skill: 'React', level: 60 },
+    ],
+  },
+  {
+    title: 'Frontend Development',
+    skills: [
+      { skill: 'React', level: 10 },
+      { skill: 'React', level: 20 },
+      { skill: 'React', level: 30 },
+      { skill: 'React', level: 40 },
+    ],
+  },
+  {
+    title: 'Frontend Development',
+    skills: [
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 90 },
+      { skill: 'React', level: 90 },
+    ],
+  },
+];
+
 const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
   console.log('isDesktop: ', isDesktop);
   const settings = {
@@ -107,6 +139,19 @@ const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
     centerMode: true,
     arrows: isDesktop,
   };
+
+  const renderSkillGroups = () =>
+    skillData.map((group, index) => (
+      <SkillGroup key={index}>
+        <SkillCard>
+          <SkillTitle>{group.title}</SkillTitle>
+          {group.skills.map((skill, idx) => (
+            <SkillBar key={idx} skill={skill.skill} level={skill.level} />
+          ))}
+        </SkillCard>
+      </SkillGroup>
+    ));
+
   return (
     <SkillContainer id={'skills'}>
       <TopContainer>
@@ -114,67 +159,9 @@ const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
       </TopContainer>
       <BottomContainer>
         {isDesktop ? (
-          <>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={80} />
-                <SkillBar skill={'React'} level={70} />
-                <SkillBar skill={'React'} level={60} />
-              </SkillCard>
-            </SkillGroup>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={10} />
-                <SkillBar skill={'React'} level={20} />
-                <SkillBar skill={'React'} level={30} />
-                <SkillBar skill={'React'} level={40} />
-              </SkillCard>
-            </SkillGroup>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-              </SkillCard>
-            </SkillGroup>
-          </>
+          renderSkillGroups()
         ) : (
-          <Slider {...settings}>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={80} />
-                <SkillBar skill={'React'} level={70} />
-                <SkillBar skill={'React'} level={60} />
-              </SkillCard>
-            </SkillGroup>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={10} />
-                <SkillBar skill={'React'} level={20} />
-                <SkillBar skill={'React'} level={30} />
-                <SkillBar skill={'React'} level={40} />
-              </SkillCard>
-            </SkillGroup>
-            <SkillGroup>
-              <SkillCard>
-                <SkillTitle>Frontend Development</SkillTitle>
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-                <SkillBar skill={'React'} level={90} />
-              </SkillCard>
-            </SkillGroup>
-          </Slider>
+          <Slider {...settings}>{renderSkillGroups()}</Slider>
         )}
       </BottomContainer>
     </SkillContainer>
