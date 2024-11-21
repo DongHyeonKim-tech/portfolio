@@ -1,5 +1,4 @@
 // components/Header.tsx
-import Link from 'next/link';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
@@ -72,11 +71,19 @@ const Header = ({ activeSection }: HeaderProps) => {
   };
   console.log('activeSection: ', activeSection);
 
+  const triggerCodeEffect = () => {
+    const codeElement = document.getElementById('code-effect');
+    if (codeElement) {
+      codeElement.classList.add('active');
+      setTimeout(() => {
+        codeElement.classList.remove('active');
+      }, 2000); // 2초 동안 효과 유지
+    }
+  };
+
   return (
     <HeaderContainer>
-      <Link href="/">
-        <Logo>Title</Logo>
-      </Link>
+      <Logo onClick={triggerCodeEffect}>Title</Logo>
       <Menu>
         <MenuItem
           $active={activeSection === 'about'}
