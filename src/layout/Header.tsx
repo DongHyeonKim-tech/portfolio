@@ -1,4 +1,5 @@
 // components/Header.tsx
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.header`
@@ -60,9 +61,11 @@ const MenuItem = styled.a<{ $active: boolean }>`
 
 interface HeaderProps {
   activeSection: string;
+  weather: string;
 }
 
-const Header = ({ activeSection }: HeaderProps) => {
+const Header = ({ activeSection, weather }: HeaderProps) => {
+  const [weatherIcon, setWeatherIcon] = useState<string>('❄️');
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -81,9 +84,30 @@ const Header = ({ activeSection }: HeaderProps) => {
     }
   };
 
+  useEffect(() => {
+    if (weather) {
+      let icon = '☀️';
+      switch (weather) {
+        case 'Clouds':
+          icon = '☁️';
+          break;
+        case 'Rain':
+          icon = '☔';
+          break;
+        case 'Mist':
+          icon = '🌫️';
+          break;
+        case 'Snow':
+          icon = '❄️';
+          break;
+      }
+      setWeatherIcon(icon);
+    }
+  }, [weather]);
+
   return (
     <HeaderContainer>
-      <Logo onClick={triggerCodeEffect}>Title</Logo>
+      <Logo onClick={triggerCodeEffect}>{`Title ${weatherIcon}`}</Logo>
       <Menu>
         <MenuItem
           $active={activeSection === 'about'}

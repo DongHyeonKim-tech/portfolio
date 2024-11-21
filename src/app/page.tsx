@@ -13,17 +13,30 @@ const MainContainer = styled.main`
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
-`;
-
-const Section = styled.section`
-  height: 100vh;
-  scroll-snap-align: start;
+  position: relative;
 `;
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState<string>('about');
   const [isDesktop, setIsDesktop] = useState<boolean>(true);
+  const [weather, setWeather] = useState<string>('Clear');
   const desktop = useMediaQuery({ minWidth: 1200 });
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const response = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=37.498095&lon=127.027610&appid=${process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY}&units=metric`
+        );
+        const data = await response.json();
+        setWeather(data.weather[0].main);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    fetchWeather();
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll('section');
@@ -59,7 +72,7 @@ export default function Home() {
         />
       </Head>
 
-      <Header activeSection={activeSection} />
+      <Header activeSection={activeSection} weather={weather} />
 
       <MainContainer>
         <About />
