@@ -14,6 +14,10 @@ const SkillContainer = styled.section`
   color: #fff;
   padding: 20px;
 
+  @media (min-width: 480px) {
+    padding: 30px;
+  }
+
   @media (min-width: 768px) {
     padding: 40px;
   }
@@ -27,7 +31,13 @@ const BottomContainer = styled.div`
   width: 100%;
   height: 50vh;
 
-  @media (min-width: 350px) {
+  @media (max-width: 480px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width: 481px) and (max-width: 1199px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -45,9 +55,13 @@ const BottomContainer = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #ff8c00;
   margin-bottom: 16px;
+
+  @media (min-width: 480px) {
+    font-size: 2rem;
+  }
 
   @media (min-width: 768px) {
     font-size: 2.5rem;
@@ -63,11 +77,16 @@ const SkillGroup = styled.div`
   max-width: 400px;
   justify-content: center;
 
-  @media (min-width: 350px) {
+  @media (min-width: 480px) {
     flex-direction: row;
+    gap: 20px;
+    max-width: 600px;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
     gap: 24px;
     max-width: 800px;
-    flex-wrap: wrap;
   }
 `;
 
@@ -78,7 +97,12 @@ const SkillCard = styled.div`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: left;
   width: 70%;
-  @media (min-width: 350px) {
+
+  @media (min-width: 480px) {
+    padding: 18px;
+  }
+
+  @media (min-width: 768px) {
     padding: 20px;
   }
 `;
@@ -87,8 +111,12 @@ const SkillTitle = styled.h3`
   color: #ff8c00;
   margin-bottom: 12px;
 
-  @media (min-width: 350px) {
-    font-size: 0.75rem;
+  @media (min-width: 480px) {
+    font-size: 0.85rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1rem;
   }
 
   @media (min-width: 1200px) {

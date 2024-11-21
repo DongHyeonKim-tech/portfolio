@@ -10,12 +10,21 @@ const CareerContainer = styled(motion.section)`
   background-color: #222;
   color: #fff;
   padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
   color: #ff8c00;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
 `;
 
 const CareerTimeline = styled.div`
@@ -24,36 +33,56 @@ const CareerTimeline = styled.div`
   gap: 20px;
   max-width: 800px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+  }
 `;
 
 const CareerCard = styled.div`
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8ox rgba(0,0,0,0.3);
-    transition: transform 0.3s
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
 
-    &:hover {
-        transform: translateY(-5px);
-    }
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const JobTitle = styled.h3`
   font-size: 1.5rem;
   color: #ff8c00;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Company = styled.p`
   font-size: 1.1rem;
   color: #ddd;
   margin: 5px 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Duration = styled.p`
   font-size: 1rem;
   color: #aaa;
   margin: 5px 0;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const Responsibilities = styled.ul`
@@ -66,6 +95,10 @@ const Responsibilities = styled.ul`
 
   li {
     margin-bottom: 5px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
   }
 `;
 
