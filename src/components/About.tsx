@@ -1,17 +1,22 @@
 import GGOMI from '@/../public/images/ggomi.jpg';
+import { CodeEffect } from '@/utils/commonUtils';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import React from 'react';
 import styled from 'styled-components';
 
 const LeftContainer = styled.div``;
 
 const RightContainer = styled.div``;
 
-const AboutContainer = styled.section`
+const AboutContainer = styled(motion.section)`
+  position: relative;
   display: flex;
   height: 100vh;
   background-color: #111;
   color: #fff;
   padding: 20px;
+  overflow: hidden;
 
   @media (min-width: 350px) {
     flex-direction: column;
@@ -25,7 +30,6 @@ const AboutContainer = styled.section`
     justify-content: space-around;
   }
 `;
-
 const Title = styled.h1`
   font-size: 2.5rem;
   color: #ff8c00;
@@ -107,15 +111,15 @@ const ProfileImageContainer = styled.div`
   }
 `;
 
-const ProfileImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const About = () => {
+const About: React.FC = () => {
   return (
-    <AboutContainer id={'about'}>
+    <AboutContainer
+      id={'about'}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <CodeEffect id="code-effect">동현</CodeEffect>
       <LeftContainer>
         <Title>{'Hi'}</Title>
         <SubTitle>blablablal</SubTitle>
@@ -124,20 +128,11 @@ const About = () => {
           <SocialButton href={'https://'} target={'_blank'}>
             GitHub
           </SocialButton>
-          {/* <SocialButton href={'https://'} target={'_blank'}>
-            LinkedIn
-          </SocialButton> */}
           <SocialButton href={'https://'} target={'_blank'}>
             Notion
           </SocialButton>
         </SocialLinks>
       </LeftContainer>
-      {/* 
-      <RightContainer>
-        <ProfileImage>
-          <Image src={GGOMI} alt={'ggomi'} />
-        </ProfileImage>
-      </RightContainer> */}
 
       <RightContainer>
         <ProfileImageContainer>
