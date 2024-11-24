@@ -4,7 +4,7 @@ import DjangoIcon from '@/../public/images/django.png';
 import DockerIcon from '@/../public/images/docker.png';
 // import ElectronIcon from '@/../public/images/electron-icon.png';
 import FastapiIcon from '@/../public/images/fastapi-logo.png';
-import FlutterIcon from '@/../public/images/flutter-icon.png';
+import GitIcon from '@/../public/images/git.png';
 import QraphQLIcon from '@/../public/images/graphQL-icon.png';
 import NongoDBIcon from '@/../public/images/mongoDB.png';
 import MssqlIcon from '@/../public/images/mssql.png';
@@ -151,7 +151,7 @@ const skillData = [
     skills: [
       { skill: 'React', level: 90, icon: ReactIcon },
       { skill: 'Next.js', level: 90, icon: NextIcon },
-      { skill: 'Redux', level: 70, icon: ReduxIcon },
+      { skill: 'Redux', level: 75, icon: ReduxIcon },
       { skill: 'Zustand', level: 80, icon: ZustandIcon },
       { skill: 'Recoil', level: 60, icon: RecoilIcon },
       { skill: 'TypeScript', level: 85, icon: TypescriptIcon },
@@ -165,7 +165,7 @@ const skillData = [
       { skill: 'FastAPI', level: 80, icon: FastapiIcon },
       { skill: 'Spring Boot', level: 60, icon: SpringIcon },
       { skill: 'RESTful API', level: 90, icon: RestfulapiIcon },
-      { skill: 'GraphQL', level: 60, icon: QraphQLIcon },
+      { skill: 'GraphQL', level: 50, icon: QraphQLIcon },
     ],
   },
   {
@@ -176,9 +176,8 @@ const skillData = [
       { skill: 'MongoDB', level: 60, icon: NongoDBIcon },
       { skill: 'Docker', level: 70, icon: DockerIcon },
       { skill: 'AWS', level: 50, icon: AwsIcon },
-      { skill: 'flutter', level: 55, icon: FlutterIcon },
+      { skill: 'Git', level: 80, icon: GitIcon },
       { skill: 'supabase', level: 60, icon: SupabaseIcon },
-      // { skill: 'electron', level: 60, icon: ElectronIcon },
     ],
   },
 ];
