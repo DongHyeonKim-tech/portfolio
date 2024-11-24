@@ -141,18 +141,21 @@ const About: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <CodeEffect id="code-effect">동현</CodeEffect>
+      <CodeEffect id="code-effect">Dev</CodeEffect>
       <LeftContainer>
         <Title>{'Hello World!'}</Title>
         <SubTitle>풀스택 웹 개발자 김동현입니다.</SubTitle>
         <Description>
           {`사용자 친화적인 접근 방식을 통해 문제를 해결하고
           비즈니스 가치를 창출하는 데 주력하는 4년 차 풀스택 개발자입니다.
-          디자인과 개발의 경계를 연결하며,
-          직관적인 인터페이스와 강력한 백엔드 아키텍처를 구현하여
+          
+          1. 디자인과 개발의 경계를 연결하며,
+          직관적인 인터페이스 및 강력한 백엔드 아키텍쳐 구현을 통해
           사용자가 만족하는 경험을 제공합니다.
-          또한, 팀의 일원으로서 협업과 소통을 통해 프로젝트의 성공을 도모하며,
-          데이터 기반의 분석으로 비즈니스 니즈를 충족시키는 데 최선을 다하고 있습니다`}
+
+          2. 원활한 협업과 소통을 바탕으로
+          완성도 높은 프로젝트의 성공을 위해
+          데이터 기반의 분석으로 비즈니스 니즈를 충족시킵니다`}
         </Description>
         <SocialLinks>
           <SocialButton
