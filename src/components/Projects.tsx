@@ -173,7 +173,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
   const projectData = [
     {
       title: '학사정보 알림 챗봇',
-      role: '기획, Front-end, Back-end, Deployment',
+      role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 1,
 
@@ -184,7 +184,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     },
     {
       title: '도서 정보 데이터 수집 기반 검색 웹 구현',
-      role: '데이터 수집, Front-end, Back-end, Deployment',
+      role: 'Data Collection and Processing, Front-end, Back-end, Deployment',
       link: null,
       team: 1,
 
@@ -342,7 +342,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     },
     {
       title: 'EG AI 데이터 모델',
-      role: 'Front-end, Web Publishing. 데이터 모델 기반 화면 퍼블리싱 및 UI 개발.',
+      role: 'Front-end, Web Publishing',
       link: 'https://egai.brdg.kr',
       team: 3,
 
@@ -353,7 +353,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     },
     {
       title: 'Gros 그린 리모델링 개선',
-      role: 'Front-end. 사용자 중심의 인터페이스 개선.',
+      role: 'Front-end',
       // link: 'https://gros.brdg.kr',
       link: null,
       team: 5,
