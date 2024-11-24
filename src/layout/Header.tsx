@@ -124,7 +124,9 @@ const Header = ({ activeSection, weather, isDesktop }: HeaderProps) => {
 
   return (
     <HeaderContainer>
-      <Logo onClick={triggerCodeEffect}>DONGHYEON's PORTFOLIO</Logo>
+      <Logo onClick={triggerCodeEffect}>
+        <span style={{ color: '#ff8c00' }}>KDH</span>'s PORTFOLIO
+      </Logo>
       <Menu>
         <MenuItem
           $active={activeSection === 'about'}
