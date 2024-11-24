@@ -84,6 +84,7 @@ const ProjectCard = styled.div`
   transition: transform 0.3s, box-shadow 0.3x;
   width: auto !important;
   text-align: center;
+  margin: 10px; // Add margin to separate cards
 
   &:hover {
     transform: translateY(-10px);
@@ -112,7 +113,8 @@ const TechStack = styled.div`
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  margin: 10px 0;
+  max-width: 100%; // Ensure it doesn't exceed the parent width
+  justify-content: start; // Center the tech badges within the available space
 `;
 
 const TechBadge = styled.span`
@@ -144,6 +146,153 @@ const Button = styled.a`
 `;
 
 const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
+  const projectData = [
+    {
+      title: '학사정보 알림 챗봇',
+      description: '기획, Front-end, Back-end, Deployment',
+      link: null,
+      team: 1,
+      techStack: ['Python', 'Heroku', 'Telegram API', 'ClearDB'],
+    },
+    {
+      title: '도서 정보 데이터 수집 기반 검색 웹 구현',
+      description: '데이터 수집, Front-end, Back-end, Deployment',
+      link: null,
+      team: 1,
+      techStack: ['MySQL', 'Django RestFramework', 'BS4', 'React'],
+    },
+    {
+      title: '한국과학기술기획평가원 통합연구시스템 솔루션',
+      description: 'Front-end, Back-end, Deployment',
+      link: null,
+      team: 12,
+      techStack: [
+        'React.js',
+        'Redux',
+        'Django RestFramework',
+        'MariaDB',
+        'Docker',
+        'GitLab',
+      ],
+    },
+    {
+      title: '중소기업기술정보진흥원 예비평가 솔루션',
+      description: 'Front-end, Back-end, Deployment',
+      link: null,
+      team: 15,
+      techStack: [
+        'React.js',
+        'Redux',
+        'Django RestFramework',
+        'MariaDB',
+        'Docker',
+        'GitLab',
+      ],
+    },
+    {
+      title: '도서 분석 검색 시스템',
+      description: 'Front-end, Back-end, Deployment',
+      link: 'https://starnet.euso.kr/',
+      team: 15,
+      techStack: [
+        'React.js',
+        'Redux',
+        'Django RestFramework',
+        'MariaDB',
+        'Docker',
+        'GitLab',
+      ],
+    },
+    {
+      title: '중소기업기술정보진흥원 스마트추진단 업무시스템',
+      description: 'Front-end, Back-end, Deployment, Web Publishing',
+      link: null,
+      team: 30,
+      techStack: ['React.js', 'Spring Framework', 'MySQL', 'Jenkins', 'SVN'],
+    },
+    {
+      title: '평가인증 시스템',
+      description: 'Front-end, Back-end, Deployment',
+      link: null,
+      team: 7,
+      techStack: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Docker',
+        'ASP.NET',
+        'MSSQL',
+        'Redux',
+      ],
+    },
+    {
+      title: '러닝 웹',
+      description: 'Front-end, Back-end, Deployment',
+      link: null,
+      team: 4,
+      techStack: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Docker',
+        'ASP.NET',
+        'MSSQL',
+      ],
+    },
+    {
+      title: '팀즈 관리 시스템',
+      description: 'Front-end, Deployment',
+      link: null,
+      team: 1,
+      techStack: ['React', 'Next.js', 'TypeScript', 'PM2', 'GraphAPI'],
+    },
+    {
+      title: '관리자 시스템',
+      description: 'Front-end, Back-end, Deployment',
+      link: null,
+      team: 1,
+      techStack: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Docker',
+        'Django',
+        'ASP.NET',
+        'MSSQL',
+        'Recoil',
+      ],
+    },
+    {
+      title: '수준측정',
+      description: 'Front-end, Deployment',
+      link: null,
+      team: 10,
+      techStack: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'Docker',
+        'ASP.NET',
+        'MSSQL',
+        'Zustand',
+      ],
+    },
+    {
+      title: 'EG AI 데이터 모델',
+      description:
+        'Front-end, Web Publishing. 데이터 모델 기반 화면 퍼블리싱 및 UI 개발.',
+      link: 'https://egai.brdg.kr',
+      team: 3,
+      techStack: ['React', 'Next.js', 'TypeScript', 'Supabase'],
+    },
+    {
+      title: 'Gros 그린 리모델링 개선',
+      description: 'Front-end. 사용자 중심의 인터페이스 개선.',
+      link: 'https://gros.brdg.kr',
+      team: 5,
+      techStack: ['React', 'Next.js', 'TypeScript', 'Supabase'],
+    },
+  ];
   const slideRef = useRef<any>();
   const settings = {
     dots: false,
@@ -159,8 +308,6 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     nextArrow: <ArrowRight onClick={() => slideRef.current?.slickNext()} />,
   };
 
-  const cards = Array.from({ length: 6 }, (_, index) => index);
-
   return (
     <ProjectsContainer
       id="projects"
@@ -175,8 +322,8 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       <BottomContainer>
         <ProjectGrid>
           <Slider {...settings}>
-            {cards.map((item) => (
-              <ProjectCard key={item}>
+            {projectData.map((item) => (
+              <ProjectCard key={item.title}>
                 <Image
                   src={City}
                   alt="city"
@@ -188,19 +335,28 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
                   }}
                 />
                 <ProjectContent>
-                  <ProjectTitle>{`Platform ${item}`}</ProjectTitle>
-                  <ProjectDescription>A full-stack bulalal</ProjectDescription>
+                  <ProjectTitle>{item.title}</ProjectTitle>
+                  <ProjectDescription>{`진행인원: ${
+                    item.team === 1 ? '단독' : item.team
+                  }${item.team === 1 ? '' : '명'}`}</ProjectDescription>
+                  <ProjectDescription>{item.description}</ProjectDescription>
                   <TechStack>
-                    {['React', 'Next.js', 'TypeScript'].map((tech) => (
+                    {item.techStack.map((tech) => (
                       <TechBadge key={tech}>{tech}</TechBadge>
                     ))}
                   </TechStack>
-                  <ButtonContainer>
-                    <Button href="https://github.com/DongHyeonKim-tech/pf">
-                      Live Demo
-                    </Button>
-                    <Button href="https://ggomi.vercel.app/">GitHub</Button>
-                  </ButtonContainer>
+                  {item.link && (
+                    <ButtonContainer>
+                      <Button
+                        onClick={() => {
+                          window.open(item.link);
+                        }}
+                      >
+                        링크
+                      </Button>
+                      {/* <Button href="https://ggomi.vercel.app/">GitHub</Button> */}
+                    </ButtonContainer>
+                  )}
                 </ProjectContent>
               </ProjectCard>
             ))}
