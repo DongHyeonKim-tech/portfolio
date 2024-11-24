@@ -176,6 +176,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 1,
+      contribution: 100,
 
       image: hongikChatbotImage,
       description:
@@ -187,6 +188,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Data Collection and Processing, Front-end, Back-end, Deployment',
       link: null,
       team: 1,
+      contribution: 100,
 
       image: bookCrawlingImage,
       description:
@@ -198,6 +200,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 12,
+      contribution: 20,
       image: kistepImage,
       description:
         '프론트엔드는 React.js(Redux로 상태관리), 백엔드는 Django restframework를 사용한 프로젝트입니다. DB는 MariaDB를 사용하였으며 Docker를 사용해 로컬 및 개발 환경에서, Podman으로 운영 환경에서 각각 배포하였습니다. 형상 관리에는 Git Lab을 사용했습니다.',
@@ -215,6 +218,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 15,
+      contribution: 30,
       image: tipaImage,
       description:
         '프론트엔드는 React.js(Redux로 상태관리), 백엔드는 Django restframework를 사용한 프로젝트입니다. DB는 MariaDB를 사용하였으며 Docker를 사용해 로컬, 개발, 운영 환경에서 각각 배포하였습니다. 형상 관리에는 Git Lab을 사용했습니다.',
@@ -232,6 +236,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: 'https://starnet.euso.kr/',
       team: 15,
+      contribution: 30,
       image: starnetImage,
       description:
         '프론트엔드는 React.js(Redux로 상태관리), 백엔드는 Django restframework를 사용한 프로젝트입니다. DB는 MariaDB를 사용하였으며 Docker를 사용해 로컬, 개발, 운영 환경에서 각각 배포하였습니다. 형상 관리에는 Git Lab을 사용했습니다. 소셜로그인을 활용해 구글, 네이버, 카카오로 로그인이 가능하도록 구현했습니다.',
@@ -249,6 +254,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment, Web Publishing',
       link: null,
       team: 30,
+      contribution: 30,
       image: tipaSejongImage,
       description:
         '프론트엔드는 React.js, 백엔드는 Spring framework를 사용한 프로젝트입니다. DB는 Mysql을 사용하였으며 Jenkins를 사용해 로컬, 개발, 운영 환경에서 각각 배포하였습니다. 형상 관리에는 svn을 사용했습니다.',
@@ -259,6 +265,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 7,
+      contribution: 75,
 
       image: AssessmentImage,
       description:
@@ -278,6 +285,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 4,
+      contribution: 50,
 
       image: learningImage,
       description:
@@ -296,6 +304,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Deployment',
       link: null,
       team: 1,
+      contribution: 100,
 
       image: teamsMngImage,
       description:
@@ -307,6 +316,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Back-end, Deployment',
       link: null,
       team: 1,
+      contribution: 100,
 
       image: adminImage,
       description:
@@ -327,6 +337,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Deployment',
       link: null,
       team: 10,
+      contribution: 40,
       image: meaPrjImage,
       description:
         '수준 측정 시스템은 React, Next.js, TypeScript를 기반으로 Docker, ASP.NET, MSSQL을 활용하여 개발 중인 프로젝트입니다. Sunburst 차트를 개발하고 데이터 입력을 자동화하여 시각화와 데이터 처리의 효율성을 높였으며, 각 페이지와 모달 UI를 직접 퍼블리싱했습니다. 또한, API 명세서를 작성해 개발 프로세스의 명확성을 확보하였습니다.',
@@ -345,6 +356,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       role: 'Front-end, Web Publishing',
       link: 'https://egai.brdg.kr',
       team: 3,
+      contribution: 50,
 
       image: egaiImage,
       description:
@@ -357,6 +369,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
       // link: 'https://gros.brdg.kr',
       link: null,
       team: 5,
+      contribution: 30,
 
       image: grosImage,
       description:
@@ -373,7 +386,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
     slidesToScroll: 1,
     centerPadding: '120px',
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3600,
     arrows: true,
     // prevArrow: <ArrowLeft onClick={() => slideRef.current?.slickPrev()} />,
     // nextArrow: <ArrowRight onClick={() => slideRef.current?.slickNext()} />,
@@ -439,7 +452,7 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
         onCancel={closeModal}
         footer={null}
         title={
-          <div style={{ color: '#fff', padding: '2px 0px 0px 16px' }}>
+          <div style={{ color: '#ff8c00', padding: '2px 0px 0px 16px' }}>
             <h2>{selectedProject?.title}</h2>
           </div>
         }
@@ -479,11 +492,22 @@ const Projects = ({ isDesktop }: { isDesktop: boolean }) => {
 
             <div style={{ padding: '0px 20px 20px 20px' }}>
               <p>
-                <strong>역할:</strong> {selectedProject.role}
+                <strong style={{ color: '#ff8c00' }}>역할:</strong>
+                {'   '}
+                {selectedProject.role}
               </p>
               <p>
-                <strong>Tech Stack:</strong>{' '}
-                {selectedProject.techStack.toString()}
+                <strong style={{ color: '#ff8c00' }}>기여도:</strong>
+                {'   '}
+                {selectedProject.contribution}%
+              </p>
+              <p>
+                <TechStack style={{ display: 'flex', alignItems: 'center' }}>
+                  <strong style={{ color: '#ff8c00' }}>Tech Stack</strong>
+                  {selectedProject.techStack.map((tech: any) => (
+                    <TechBadge key={tech}>{tech}</TechBadge>
+                  ))}
+                </TechStack>
               </p>
               <div>{selectedProject.description}</div>
             </div>

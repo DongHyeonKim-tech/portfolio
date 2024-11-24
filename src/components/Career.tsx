@@ -1,3 +1,4 @@
+import { Divider } from 'antd';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
@@ -136,6 +137,7 @@ const Career = () => {
             </li>
           </Responsibilities>
         </CareerCard>
+        <Divider style={{ backgroundColor: '#fff' }} />
         <CareerCard>
           <JobTitle>Full Stack Developer</JobTitle>
           <Company>Haeahn Architecture</Company>

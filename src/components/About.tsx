@@ -62,6 +62,7 @@ const Description = styled.p`
   max-width: 600px;
   margin-bottom: 30px;
   line-height: 1.6;
+  white-space: pre-line;
 
   @media (min-width: 1200px) {
     font-size: 1.1rem;
@@ -98,6 +99,26 @@ const SocialButton = styled.a`
   }
 `;
 
+const DisabledSocialButton = styled.a`
+  padding: 10px 15px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: #333;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+`;
+
 const ProfileImageContainer = styled.div`
   width: 100px;
   height: 100px;
@@ -125,20 +146,24 @@ const About: React.FC = () => {
         <Title>{'Hello World!'}</Title>
         <SubTitle>풀스택 웹 개발자 김동현입니다.</SubTitle>
         <Description>
-          사용자 친화적인 접근 방식을 통해, 문제를 해결하고 비즈니스 가치를
-          창출하는 데 주력하는 4년 차 풀스택 개발자입니다. 디자인과 개발의
-          경계를 연결하며, 직관적인 인터페이스와 강력한 백엔드 아키텍처를
-          구현하여 사용자가 만족하는 경험을 제공합니다. 또한, 팀의 일원으로서
-          협업과 소통을 통해 프로젝트의 성공을 도모하며, 데이터 기반의 분석으로
-          비즈니스 니즈를 충족시키는 데 최선을 다하고 있습니다
+          {`사용자 친화적인 접근 방식을 통해 문제를 해결하고
+          비즈니스 가치를 창출하는 데 주력하는 4년 차 풀스택 개발자입니다.
+          디자인과 개발의 경계를 연결하며,
+          직관적인 인터페이스와 강력한 백엔드 아키텍처를 구현하여
+          사용자가 만족하는 경험을 제공합니다.
+          또한, 팀의 일원으로서 협업과 소통을 통해 프로젝트의 성공을 도모하며,
+          데이터 기반의 분석으로 비즈니스 니즈를 충족시키는 데 최선을 다하고 있습니다`}
         </Description>
         <SocialLinks>
-          <SocialButton href={'https://'} target={'_blank'}>
+          <SocialButton
+            href={'https://github.com/DongHyeonKim-tech'}
+            target={'_blank'}
+          >
             GitHub
           </SocialButton>
-          <SocialButton href={'https://'} target={'_blank'}>
+          <DisabledSocialButton href={'https://'} target={'_blank'}>
             Notion
-          </SocialButton>
+          </DisabledSocialButton>
         </SocialLinks>
       </LeftContainer>
 

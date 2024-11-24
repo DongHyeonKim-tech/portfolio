@@ -50,28 +50,28 @@ const BottomContainer = styled.div`
   gap: 15px;
   width: 100%;
   height: 50vh;
-  margin-top: 100px;
 
   @media (max-width: 480px) {
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   @media (min-width: 481px) and (max-width: 1199px) {
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
 
   @media (min-width: 1200px) {
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
   }
 
   div.slick-slider {
     width: 100%;
+    height: 100%;
   }
 `;
 

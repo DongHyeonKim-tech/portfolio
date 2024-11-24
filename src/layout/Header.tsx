@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 15px 0px 15px 0px;
@@ -15,6 +14,18 @@ const HeaderContainer = styled.header`
   transition: background-color 0.3s, box-shadow 0.3s;
   z-index: 10;
   max-width: 1850px;
+  margin: 20px 0px 0px 20px;
+  @media (min-width: 350px) {
+    width: 80%;
+  }
+
+  @media (min-width: 250px) {
+    width: 90%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 100%;
+  }
 `;
 
 const Logo = styled.span`
