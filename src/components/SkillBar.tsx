@@ -1,9 +1,11 @@
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 interface SkillBarProps {
   skill: string;
   level: number;
+  icon: any; //
 }
 
 const SkillContainer = styled.div`
@@ -12,6 +14,9 @@ const SkillContainer = styled.div`
 `;
 
 const Label = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1rem;
   font-weight: 500;
   color: #ff8c00;
@@ -46,7 +51,7 @@ const Filler = styled.div<{ width: number }>`
   transition: width 0.6s ease-in-out;
 `;
 
-const SkillBar = ({ skill, level }: SkillBarProps) => {
+const SkillBar = ({ skill, level, icon }: SkillBarProps) => {
   const [progress, setProgress] = useState<number>(0);
 
   useEffect(() => {
@@ -55,7 +60,10 @@ const SkillBar = ({ skill, level }: SkillBarProps) => {
 
   return (
     <SkillContainer>
-      <Label>{skill}</Label>
+      <Label>
+        <Image src={icon} alt={skill} width={20} height={20} />
+        {skill}
+      </Label>
       <ProgressBar>
         <Filler width={progress} />
       </ProgressBar>

@@ -1,3 +1,23 @@
+import AwsIcon from '@/../public/images/aws.png';
+import CssIcon from '@/../public/images/css.png';
+import DjangoIcon from '@/../public/images/django.png';
+import DockerIcon from '@/../public/images/docker.png';
+// import ElectronIcon from '@/../public/images/electron-icon.png';
+import FastapiIcon from '@/../public/images/fastapi-logo.png';
+import FlutterIcon from '@/../public/images/flutter-icon.png';
+import QraphQLIcon from '@/../public/images/graphQL-icon.png';
+import NongoDBIcon from '@/../public/images/mongoDB.png';
+import MssqlIcon from '@/../public/images/mssql.png';
+import MysqlIcon from '@/../public/images/mysql.png';
+import NextIcon from '@/../public/images/next-js-icon.png';
+import ReactIcon from '@/../public/images/react-icon.png';
+import RecoilIcon from '@/../public/images/recoil-logo.png';
+import ReduxIcon from '@/../public/images/redux.png';
+import RestfulapiIcon from '@/../public/images/restfulapi.png';
+import SpringIcon from '@/../public/images/spring.png';
+import SupabaseIcon from '@/../public/images/supabase_icon.png';
+import TypescriptIcon from '@/../public/images/typescript.png';
+import ZustandIcon from '@/../public/images/zustand.png';
 import SkillBar from '@/components/SkillBar';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -129,34 +149,36 @@ const skillData = [
   {
     title: 'Frontend',
     skills: [
-      { skill: 'React', level: 90 },
-      { skill: 'Next.js', level: 90 },
-      { skill: 'Redux', level: 70 },
-      { skill: 'Zustand', level: 80 },
-      { skill: 'Recoil', level: 60 },
-      { skill: 'TypeScript', level: 85 },
-      { skill: 'CSS Modules', level: 75 },
+      { skill: 'React', level: 90, icon: ReactIcon },
+      { skill: 'Next.js', level: 90, icon: NextIcon },
+      { skill: 'Redux', level: 70, icon: ReduxIcon },
+      { skill: 'Zustand', level: 80, icon: ZustandIcon },
+      { skill: 'Recoil', level: 60, icon: RecoilIcon },
+      { skill: 'TypeScript', level: 85, icon: TypescriptIcon },
+      { skill: 'CSS Modules', level: 75, icon: CssIcon },
     ],
   },
   {
     title: 'Backend',
     skills: [
-      { skill: 'Django', level: 80 },
-      { skill: 'FastAPI', level: 80 },
-      { skill: 'Spring Boot', level: 60 },
-      { skill: 'RESTful API', level: 90 },
-      { skill: 'GraphQL', level: 60 },
-      { skill: 'Node.js', level: 70 },
+      { skill: 'Django', level: 80, icon: DjangoIcon },
+      { skill: 'FastAPI', level: 80, icon: FastapiIcon },
+      { skill: 'Spring Boot', level: 60, icon: SpringIcon },
+      { skill: 'RESTful API', level: 90, icon: RestfulapiIcon },
+      { skill: 'GraphQL', level: 60, icon: QraphQLIcon },
     ],
   },
   {
     title: 'others',
     skills: [
-      { skill: 'MySQL', level: 80 },
-      { skill: 'MSSQL', level: 80 },
-      { skill: 'MongoDB', level: 60 },
-      { skill: 'Docker', level: 70 },
-      { skill: 'AWS', level: 50 },
+      { skill: 'MySQL', level: 80, icon: MysqlIcon },
+      { skill: 'MSSQL', level: 80, icon: MssqlIcon },
+      { skill: 'MongoDB', level: 60, icon: NongoDBIcon },
+      { skill: 'Docker', level: 70, icon: DockerIcon },
+      { skill: 'AWS', level: 50, icon: AwsIcon },
+      { skill: 'flutter', level: 55, icon: FlutterIcon },
+      { skill: 'supabase', level: 60, icon: SupabaseIcon },
+      // { skill: 'electron', level: 60, icon: ElectronIcon },
     ],
   },
 ];
@@ -179,7 +201,12 @@ const Skills = ({ isDesktop }: { isDesktop: boolean }) => {
         <SkillCard>
           <SkillTitle>{group.title}</SkillTitle>
           {group.skills.map((skill, idx) => (
-            <SkillBar key={idx} skill={skill.skill} level={skill.level} />
+            <SkillBar
+              key={idx}
+              skill={skill.skill}
+              level={skill.level}
+              icon={skill.icon}
+            />
           ))}
         </SkillCard>
       </SkillGroup>
