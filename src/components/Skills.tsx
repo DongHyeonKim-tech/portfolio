@@ -169,7 +169,7 @@ const skillData = [
     ],
   },
   {
-    title: 'others',
+    title: 'Others',
     skills: [
       { skill: 'MySQL', level: 80, icon: MysqlIcon },
       { skill: 'MSSQL', level: 80, icon: MssqlIcon },
