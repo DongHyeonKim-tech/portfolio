@@ -72,7 +72,11 @@ export default function Home() {
         />
       </Head>
 
-      <Header activeSection={activeSection} weather={weather} />
+      <Header
+        activeSection={activeSection}
+        weather={weather}
+        isDesktop={isDesktop}
+      />
 
       <MainContainer>
         <About />

@@ -113,21 +113,39 @@ const Career = () => {
       <Title>Career Journey</Title>
       <CareerTimeline>
         <CareerCard>
-          <JobTitle>Middle Full Stack Developer</JobTitle>
+          <JobTitle>Full Stack Developer</JobTitle>
           <Company>Euclidsoft</Company>
           <Duration>2021 - 2023</Duration>
           <Responsibilities>
-            <li>Full Stack Web Development - KISTEP</li>
-            <li>Full Stack Web Development - </li>
+            <li>
+              Full Stack Web Development - 도서 정보 데이터 수집 기반 검색 웹
+              구현
+            </li>
+            <li>
+              Full Stack Web Development - 한국과학기술기획평가원 통합연구시스템
+              솔루션
+            </li>
+            <li>
+              Full Stack Web Development - 중소기업기술정보진흥원 예비평가
+              솔루션
+            </li>
+            <li>Full Stack Web Development - 도서 분석 검색 시스템</li>
+            <li>
+              Full Stack Web Development - 중소기업기술정보진흥원 스마트추진단
+              업무시스템
+            </li>
           </Responsibilities>
         </CareerCard>
         <CareerCard>
-          <JobTitle>Middle Full Stack Developer</JobTitle>
-          <Company>Euclidsoft</Company>
-          <Duration>2021 - 2023</Duration>
+          <JobTitle>Full Stack Developer</JobTitle>
+          <Company>Haeahn Architecture</Company>
+          <Duration>2023 - </Duration>
           <Responsibilities>
-            <li>Full Stack Web Development - KISTEP</li>
-            <li>Full Stack Web Development - </li>
+            <li>Full Stack Web Development - 평가인증 시스템</li>
+            <li>Full Stack Web Development - 러닝 웹</li>
+            <li>Full Stack Web Development - 팀즈 관리 시스템</li>
+            <li>Full Stack Web Development - 관리자 시스템</li>
+            <li>Front-end Development - 수준측정 시스템</li>
           </Responsibilities>
         </CareerCard>
       </CareerTimeline>
