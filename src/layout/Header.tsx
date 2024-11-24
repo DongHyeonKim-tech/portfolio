@@ -107,31 +107,31 @@ const Header = ({ activeSection, weather }: HeaderProps) => {
 
   return (
     <HeaderContainer>
-      <Logo onClick={triggerCodeEffect}>{`Title ${weatherIcon}`}</Logo>
+      <Logo onClick={triggerCodeEffect}>{`KIM DONGHYEON ${weatherIcon}`}</Logo>
       <Menu>
         <MenuItem
           $active={activeSection === 'about'}
           onClick={() => handleScroll('about')}
         >
-          Menu1
+          About
         </MenuItem>
         <MenuItem
           $active={activeSection === 'skills'}
           onClick={() => handleScroll('skills')}
         >
-          Menu2
+          Skills
         </MenuItem>
         <MenuItem
           $active={activeSection === 'projects'}
           onClick={() => handleScroll('projects')}
         >
-          Menu3
+          Projects
         </MenuItem>
         <MenuItem
           $active={activeSection === 'career'}
           onClick={() => handleScroll('career')}
         >
-          Menu4
+          Career
         </MenuItem>
       </Menu>
     </HeaderContainer>
