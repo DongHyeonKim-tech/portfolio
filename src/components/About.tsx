@@ -1,4 +1,4 @@
-import GGOMI from '@/../public/images/ggomi.jpg';
+import Profile from '@/../public/images/profile.jpg';
 import { CodeEffect } from '@/utils/commonUtils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -72,6 +72,7 @@ const Description = styled.p`
 const SocialLinks = styled.div`
   display: flex;
   gap: 10px;
+  justify-content: space-around;
 
   @media (min-width: 1200px) {
     gap: 15px;
@@ -105,8 +106,8 @@ const ProfileImageContainer = styled.div`
   margin-top: 20px;
 
   @media (min-width: 1200px) {
-    width: 150px;
-    height: 150px;
+    width: 450px;
+    height: 550px;
     margin-top: 30px;
   }
 `;
@@ -121,9 +122,12 @@ const About: React.FC = () => {
     >
       <CodeEffect id="code-effect">동현</CodeEffect>
       <LeftContainer>
-        <Title>{'Hi'}</Title>
-        <SubTitle>blablablal</SubTitle>
-        <Description>bulalalala</Description>
+        <Title>{'Hello World!'}</Title>
+        <SubTitle>풀스택 웹 개발자 김동현입니다.</SubTitle>
+        <Description>
+          사용자 친화적인 관점에서 편의성과 문제 해결을 우선시하는 5년차
+          개발자입니다.
+        </Description>
         <SocialLinks>
           <SocialButton href={'https://'} target={'_blank'}>
             GitHub
@@ -137,8 +141,8 @@ const About: React.FC = () => {
       <RightContainer>
         <ProfileImageContainer>
           <Image
-            src={GGOMI}
-            alt={'ggomi'}
+            src={Profile}
+            alt={'profile'}
             style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           />
         </ProfileImageContainer>

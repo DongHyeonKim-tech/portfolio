@@ -30,6 +30,7 @@ const BottomContainer = styled.div`
   gap: 15px;
   width: 100%;
   height: 50vh;
+  margin-top: 100px;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -126,32 +127,36 @@ const SkillTitle = styled.h3`
 
 const skillData = [
   {
-    title: 'Frontend Development',
+    title: 'Frontend',
     skills: [
       { skill: 'React', level: 90 },
-      { skill: 'React', level: 80 },
-      { skill: 'React', level: 70 },
-      { skill: 'React', level: 60 },
+      { skill: 'Next.js', level: 90 },
+      { skill: 'Redux', level: 70 },
+      { skill: 'Zustand', level: 80 },
+      { skill: 'Recoil', level: 60 },
+      { skill: 'TypeScript', level: 85 },
+      { skill: 'CSS Modules', level: 75 },
     ],
   },
   {
-    title: 'Frontend Development',
+    title: 'Backend',
     skills: [
-      { skill: 'React', level: 10 },
-      { skill: 'React', level: 20 },
-      { skill: 'React', level: 30 },
-      { skill: 'React', level: 40 },
+      { skill: 'Django', level: 80 },
+      { skill: 'FastAPI', level: 80 },
+      { skill: 'Spring Boot', level: 60 },
+      { skill: 'RESTful API', level: 90 },
+      { skill: 'GraphQL', level: 60 },
+      { skill: 'Node.js', level: 70 },
     ],
   },
   {
-    title: 'Frontend Development',
+    title: 'others',
     skills: [
-      { skill: 'React', level: 90 },
-      { skill: 'React', level: 90 },
-      { skill: 'React', level: 90 },
-      { skill: 'React', level: 90 },
-      { skill: 'React', level: 90 },
-      { skill: 'React', level: 90 },
+      { skill: 'MySQL', level: 80 },
+      { skill: 'MSSQL', level: 80 },
+      { skill: 'MongoDB', level: 60 },
+      { skill: 'Docker', level: 70 },
+      { skill: 'AWS', level: 50 },
     ],
   },
 ];
