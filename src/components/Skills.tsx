@@ -33,6 +33,7 @@ const SkillContainer = styled.section`
   background-color: #222;
   color: #fff;
   padding: 20px;
+  scroll-margin-top: -50px;
 
   @media (min-width: 480px) {
     padding: 30px;
