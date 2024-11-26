@@ -172,9 +172,17 @@ const About: React.FC = () => {
           >
             GitHub
           </SocialButton>
-          <DisabledSocialButton href={'https://'} target={'_blank'}>
+          {/* <DisabledSocialButton href={'https://'} target={'_blank'}>
             Notion
-          </DisabledSocialButton>
+          </DisabledSocialButton> */}
+          <SocialButton
+            href={
+              'https://www.notion.so/Archiving-14a99b2b707480c68441c2d00a99677c?pvs=4'
+            }
+            target={'_blank'}
+          >
+            Notion
+          </SocialButton>
         </SocialLinks>
       </LeftContainer>
 
