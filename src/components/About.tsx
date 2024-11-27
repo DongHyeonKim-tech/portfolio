@@ -177,7 +177,7 @@ const About: React.FC = () => {
           </DisabledSocialButton> */}
           <SocialButton
             href={
-              'https://www.notion.so/Archiving-14a99b2b707480c68441c2d00a99677c?pvs=4'
+              'https://iron-faucet-d93.notion.site/Archiving-14a99b2b707480c68441c2d00a99677c'
             }
             target={'_blank'}
           >
